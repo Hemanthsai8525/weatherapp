@@ -1,5 +1,7 @@
 .container{
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 .left{
     text-align: right;
@@ -7,5 +9,42 @@
 body {
     background: url('./beautiful-mountains.jpg') no-repeat center center fixed;
     background-size: cover;
+    background-attachment: fixed;
     color: white;
+    font-size: 1rem;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .col-4, .col-2 {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .btn {
+        width: 100%;
+    }
+}
+
+/* Weather information layout */
+@media (max-width: 768px) {
+    .right, .left {
+        width: 100%;
+        text-align: center;
+    }
+    .forecast {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start;
+        gap: 10px;
+    }
+    .forecast .col {
+        flex: 0 0 auto;
+        width: 120px;
+    }
 }
