@@ -1,27 +1,3 @@
-// let API= "https://fakestoreapi.com/products/1";
-
-// async function getdata() {
-
-//     let obj={
-//         id: 1,
-//         title: 'Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops',
-//         price: 109.95,
-//         description: 'Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday',
-//         category: "men's clothing",
-//         image: 'https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg',
-//         rating: { rate: 3.9, count: 120 }
-//       }
-//     // let data =await fetch(API);
-//     // obj = await data.json();
-//     // console.log(obj);
-//     //let res = await axios.get("https://fakestoreapi.com/products/1");
-//     //let res = await axios.post("https://fakestoreapi.com/products/");
-//    //let res = await axios.put("https://fakestoreapi.com/products/1");
-//    let res = await axios.delete("https://fakestoreapi.com/products/1");
-//     console.log(res.data);
-
-// }
-// getdata()
 
 
 let key = "f13e70494cad41a29dc83513251303";
@@ -30,7 +6,7 @@ let weather=[];
 
 async function getdata(){
     let city = document.getElementById('cityname').value
-    let API = `http://api.weatherapi.com/v1/forecast.json?key=${key}&q=${city}&days=7&aqi=yes`;
+    let API = `https://api.weatherapi.com/v1/forecast.json?key=${key}&q=${city}&days=7&aqi=yes`;
     let res = axios.get(API);
     res.then((result)=>{
         console.log(result)
@@ -42,14 +18,10 @@ async function getdata(){
         alert("city not found")
     })
 
-   // console.log(weather);
-
 }
 
 
 function display(res){
-
-   // console.log(res.data)
     let data=res.data;
     document.getElementById("locatindetid").innerHTML=`
     <h1>${data.location.name}</h1>
@@ -59,7 +31,6 @@ function display(res){
     document.getElementById("icon").innerHTML=`
     <img src="${data.current.condition.icon}">`
 }
-//getdata(Paris);
 function getforecast(res){
     let data = res.data.forecast.forecastday[0].hour;
     let data1 = res.data.forecast.forecastday;
