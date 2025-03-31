@@ -1,9 +1,9 @@
-.container{
+.container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
-.left{
+.left {
     text-align: right;
 }
 body {
@@ -19,32 +19,67 @@ img {
     height: auto;
 }
 
-/* Responsive Styling */
-@media (max-width: 768px) {
-    .col-4, .col-2 {
-        width: 100%;
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 10px !important;
+    }
+    
+    .left, .right {
+        width: 100% !important;
+        text-align: center;
+    }
+    
+    #forecast {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    #forecast .col-2 {
+        width: 100% !important;
+        margin-bottom: 15px;
+    }
+    
+    #weekforecast .col {
+        margin-bottom: 20px;
+    }
+    
+    .row.justify-content-center {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .row.justify-content-center .col-4,
+    .row.justify-content-center .col-2 {
+        width: 90% !important;
         margin-bottom: 10px;
     }
-    .btn {
-        width: 100%;
+    
+    #locatindetid, #icon {
+        text-align: center;
+    }
+    
+    .box {
+        padding: 10px !important;
     }
 }
 
-/* Weather information layout */
-@media (max-width: 768px) {
-    .right, .left {
-        width: 100%;
-        text-align: center;
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 0.9rem;
     }
-    .forecast {
-        display: flex;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        justify-content: flex-start;
-        gap: 10px;
+    
+    h1 {
+        font-size: 1.5rem;
     }
-    .forecast .col {
-        flex: 0 0 auto;
-        width: 120px;
+    
+    h2 {
+        font-size: 1.2rem;
+    }
+    
+    #forecast img,
+    #weekforecast img {
+        max-width: 50px;
     }
 }

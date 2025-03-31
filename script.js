@@ -1,6 +1,6 @@
 
 
-let key = "f13e70494cad41a29dc83513251303";
+let key = "98c35bb5f4ef4796aa572950253103";
 
 let weather=[];
 
@@ -53,7 +53,7 @@ function getforecast(res){
 
         let columns1 =  data1.reduce((cols,obj,ind)=>{ 
             //console.log(obj.day.condition.text)
-            //console.log(obj)
+            console.log(obj)
                 let col=`
                 <div class="col">
                 <h6>${obj.date}</h6>
